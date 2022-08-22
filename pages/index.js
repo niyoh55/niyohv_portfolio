@@ -190,7 +190,7 @@ export default function Home() {
         >
           <div className="flex flex-col justify-center items-center gap-y-5">
             <h1 className="text-8xl ">
-              Hi! I'm <span className="font-semibold">Niyoh</span> a{" "}
+              Hi! I&apos;m <span className="font-semibold">Niyoh</span> a{" "}
             </h1>
             <div className="type-wrap  text-8xl">
               <span
@@ -241,12 +241,12 @@ export default function Home() {
               <span className="text-primary_bg font-semibold">
                 Niyoh Edwyn A. Villanueva
               </span>
-              . I'm 23 years old and currently living in Rosario, Cavite. I
+              . I&apos;m 23 years old and currently living in Rosario, Cavite. I
               graduated in Cavite State University - CCAT Campus with a
-              Bachelor's Degree in Computer Engineering. I have almost 2 years
-              of experience in the IT industry. Currently, I want to only focus
-              on Front End Development specially with Javascript Libraries and
-              Frameworks like React, React Native and Next.js.
+              Bachelor&apos;s Degree in Computer Engineering. I have almost 2
+              years of experience in the IT industry. Currently, I want to only
+              focus on Front End Development specially with Javascript Libraries
+              and Frameworks like React, React Native and Next.js.
             </p>
           </motion.div>
         </div>
