@@ -3,6 +3,8 @@ import { useEffect, useState, useRef } from "react";
 import { MdPersonOutline } from "react-icons/md";
 import Head from "next/head";
 import Typed from "typed.js";
+import { AiOutlinePhone, AiFillFacebook, AiFillLinkedin } from "react-icons/ai";
+import { MdAlternateEmail } from "react-icons/md";
 export default function Home() {
   const [currYPos, setCurrYPos] = useState(0);
   const [activeScreen, setActiveScreen] = useState("Home");
@@ -199,17 +201,31 @@ export default function Home() {
                 ref={el}
               />
             </div>
-            <motion.button
-              className="px-2 py-2 border-b-2 border-primary_bg text-3xl my-5"
-              whileHover={{ scale: 1.1, color: "#1e3891" }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ duration: 0.1 }}
-              onClick={() =>
-                aboutRef.current.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              Know more about me
-            </motion.button>
+            <div className="flex flex-row gap-x-5">
+              <motion.button
+                className="px-2 py-2 border-b-2 border-primary_bg text-3xl my-5"
+                whileHover={{ scale: 1.1, color: "#1e3891" }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ duration: 0.1 }}
+                onClick={() =>
+                  aboutRef.current.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                Know more about me
+              </motion.button>
+
+              <motion.button
+                className="px-2 py-2 border-b-2 border-primary_bg text-3xl my-5"
+                whileHover={{ scale: 1.1, color: "#1e3891" }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ duration: 0.1 }}
+                onClick={() =>
+                  contactRef.current.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                Contact Me
+              </motion.button>
+            </div>
           </div>
         </div>
 
@@ -253,7 +269,7 @@ export default function Home() {
 
         <motion.div
           ref={skillsRef}
-          className="h-screen w-full bg-whitish_pastel snap-start flex flex-col justify-center items-center py-20"
+          className="h-screen w-full bg-pink_pastel snap-start flex flex-col justify-center items-center py-20"
         >
           <h1 className="text-6xl font-oswald my-10">My Skills</h1>
 
@@ -265,7 +281,6 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 key={index}
                 className="bg-white rounded-md shadow-2xl aspect-square m-5 p-10 flex flex-col justify-center items-center gap-y-2"
-                onClick={() => setNumOfBox((state) => state - 1)}
               >
                 <img className="aspect-square h-20" src={item.img_url} />
                 <span className="text-lg font-oswald">{item.title}</span>
@@ -276,15 +291,58 @@ export default function Home() {
 
         <div
           ref={projectRef}
-          className="h-screen w-full bg-blue-400 snap-start flex "
+          className="h-screen w-full bg-whitish_pastel snap-start flex "
         >
           <h1>wews</h1>
         </div>
         <div
           ref={contactRef}
-          className="h-screen w-full bg-red-400 snap-start flex"
+          className="h-screen w-full bg-yellow_pastel snap-start flex flex-col justify-center items-center py-20 font-oswald gap-y-10"
         >
-          <h1>wews</h1>
+          <div>
+            <h1 className="text-6xl">Contact</h1>
+          </div>
+
+          <div className="flex flex-row justify-center items-center gap-x-20">
+            <div>
+              <div className="flex flex-row gap-x-5">
+                <MdAlternateEmail className="text-5xl" />
+                <motion.a
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 1.1 }}
+                  href="mailto: niyohedwyn21@gmail.com"
+                >
+                  <h1 className="text-3xl underline">niyohedwyn21@gmail.com</h1>
+                </motion.a>
+              </div>
+              <div className="flex flex-row gap-x-5">
+                <AiOutlinePhone className="text-5xl" />
+                <h1 className="text-3xl">+639959223380</h1>
+              </div>
+            </div>
+            <div>
+              <div className="flex flex-row gap-x-5">
+                <AiFillLinkedin className="text-5xl text-[#0A66C2]" />
+                <motion.a
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 1.1 }}
+                  href="https://www.linkedin.com/in/niyoh-edwyn-villanueva-5b2524113/"
+                >
+                  <h1 className="text-3xl underline">LinkedIn Profile</h1>
+                </motion.a>
+              </div>
+              <div className="flex flex-row gap-x-5">
+                <AiFillFacebook className="text-5xl text-[#4267B2]" />
+                <motion.a
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 1.1 }}
+                  href="https://www.facebook.com/niyohedwyn.villanueva/"
+                >
+                  <h1 className="text-3xl underline">Facebook Profile</h1>
+                </motion.a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
