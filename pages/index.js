@@ -289,22 +289,157 @@ export default function Home() {
           </div>
         </motion.div>
 
+        {/* Projects */}
         <div
           ref={projectRef}
-          className="h-screen w-full bg-whitish_pastel snap-start flex "
+          className="h-screen w-full bg-whitish_pastel snap-start flex py-20 font-oswald"
         >
-          <h1>wews</h1>
+          <div className="flex flex-col w-full h-full">
+            <div className="flex justify-center my-5">
+              <p className="text-6xl md:text-6xl text-black">Projects</p>
+            </div>
+
+            <motion.div
+              // initial={{ scale: 0 }}
+              // animate={{ scale: 1 }}
+              // transition={{ duration: 0.6, delay: 0.3 }}
+              className="carousel w-full"
+            >
+              <div
+                id="slide1"
+                className="aspect-video carousel-item relative min-w-[30%] w-full bg-contain bg-no-repeat h-auto bg-center bg-whitish_pastel group shadow-2xl"
+                style={{
+                  backgroundImage: `url("https://i.ibb.co/k9H0GNS/socmed-next.png")`,
+                }}
+              >
+                <div className="flex flex-col justify-center items-center h-full w-full bg-opacity-50 bg-black transition-all duration-300">
+                  <p className="text-xl md:text-6xl text-white text-center opacity-100 group-hover:opacity-0 group-hover:hidden transition-all duration-300">
+                    Simple Social Media Website
+                  </p>
+                  <p className="texl-lg md:text-4xl text-white hidden opacity-0 group-hover:opacity-100 group-hover:flex transition-all duration-300 px-20">
+                    {/* Create your own posts. Like or comment on posts from other
+                users. Still adding new features. */}
+                    {/* Made with NextJS + TailwindCSS and MongoDB + mongoose for
+                backend. Still under development. */}
+                    Create an account and post what you want. (NextJS +
+                    TailwindCSS)
+                  </p>
+                  <a href="https://socmed-next.vercel.app/">
+                    <button className="mt-5 py-2 px-5 hidden opacity-0 group-hover:opacity-100 group-hover:flex rounded-sm bg-white text-black ">
+                      Visit
+                    </button>
+                  </a>
+                </div>
+
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                  <a href="#slide3" className="btn btn-circle">
+                    ❮
+                  </a>
+                  <a href="#slide2" className="btn btn-circle">
+                    ❯
+                  </a>
+                </div>
+              </div>
+
+              <motion.div
+                id="slide2"
+                className="aspect-video carousel-item relative w-full min-w-[30%] bg-contain bg-no-repeat h-auto  bg-center bg-whitish_pastel group shadow-2xl"
+                style={{
+                  backgroundImage: `url("https://i.ibb.co/tMQktM7/1657532466504.png")`,
+                }}
+              >
+                <div className="flex flex-col justify-center items-center h-full w-full bg-opacity-50 bg-black transition-all duration-300">
+                  <p className="text-xl md:text-6xl text-white text-center opacity-100 group-hover:opacity-0 group-hover:hidden transition-all duration-300">
+                    3D Printing Shop(E-Commerce Sample)
+                  </p>
+                  <p className="texl-lg md:text-4xl text-white hidden opacity-0 group-hover:opacity-100 group-hover:flex transition-all duration-300 px-20">
+                    {/* Create your own posts. Like or comment on posts from other
+                users. Still adding new features. */}
+                    {/* Made with NextJS + TailwindCSS. Still under development. */}
+                    3D Printing E-Commerce Shop Concept. (NextJS + TailwindCSS)
+                  </p>
+                  <a href="https://we-printz.vercel.app/">
+                    <button className="mt-5 py-2 px-5 hidden opacity-0 group-hover:opacity-100 group-hover:flex rounded-sm bg-white text-black ">
+                      Visit
+                    </button>
+                  </a>
+                </div>
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                  <a href="#slide1" className="btn btn-circle">
+                    ❮
+                  </a>
+                  <a href="#slide3" className="btn btn-circle">
+                    ❯
+                  </a>
+                </div>
+              </motion.div>
+
+              <motion.div
+                id="slide3"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+                className="aspect-video carousel-item relative w-full min-w-[30%] bg-contain bg-no-repeat h-auto  bg-center bg-whitish_pastel group shadow-2xl"
+                style={{
+                  backgroundImage: `url("https://i.ibb.co/ftTpgs0/netflix-clone.png")`,
+                }}
+              >
+                <div className="flex flex-col justify-center items-center h-full w-full bg-opacity-50 bg-black transition-all duration-300">
+                  <p className="text-xl md:text-6xl text-white text-center opacity-100 group-hover:opacity-0 group-hover:hidden transition-all duration-300">
+                    Netflix Clone
+                  </p>
+                  <p className="texl-lg md:text-4xl text-white hidden opacity-0 group-hover:opacity-100 group-hover:flex transition-all duration-300 px-20">
+                    Browse the latest and trending movies/shows. (NextJS +
+                    TailwindCSS)
+                  </p>
+                  <a href="https://netflix-clone-iota-nine.vercel.app/">
+                    <button className="mt-5 py-2 px-5 hidden opacity-0 group-hover:opacity-100 group-hover:flex rounded-sm bg-white text-black ">
+                      Visit
+                    </button>
+                  </a>
+                </div>
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                  <a href="#slide2" className="btn btn-circle">
+                    ❮
+                  </a>
+                  <a href="#slide1" className="btn btn-circle">
+                    ❯
+                  </a>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
+
         <div
           ref={contactRef}
-          className="h-screen w-full bg-yellow_pastel snap-start flex flex-col justify-center items-center py-20 font-oswald gap-y-10"
+          className="h-screen w-full bg-yellow_pastel snap-start flex flex-row-reverse justify-center items-center py-20 font-oswald gap-y-10"
         >
-          <div>
-            <h1 className="text-6xl">Contact</h1>
-          </div>
+          {/* https://i.ibb.co/RYds9QN/undraw-Contact-us-re-4qqt.png */}
 
-          <div className="flex flex-row justify-center items-center gap-x-20">
+          <motion.div
+            className="w-full h-full flex justify-center items-center"
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <img
+              src="https://i.ibb.co/RYds9QN/undraw-Contact-us-re-4qqt.png"
+              alt="undraw-Profile-details-re-ch9r"
+            />
+          </motion.div>
+
+          <motion.div
+            className="px-10 flex flex-col justify-center items-center gap-y-10 w-full font-oswald"
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
             <div>
+              <h1 className="text-6xl">Contact Me</h1>
+            </div>
+
+            <div className="flex flex-col items-start">
               <div className="flex flex-row gap-x-5">
                 <MdAlternateEmail className="text-5xl" />
                 <motion.a
@@ -319,8 +454,6 @@ export default function Home() {
                 <AiOutlinePhone className="text-5xl" />
                 <h1 className="text-3xl">+639959223380</h1>
               </div>
-            </div>
-            <div>
               <div className="flex flex-row gap-x-5">
                 <AiFillLinkedin className="text-5xl text-[#0A66C2]" />
                 <motion.a
@@ -342,7 +475,7 @@ export default function Home() {
                 </motion.a>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
