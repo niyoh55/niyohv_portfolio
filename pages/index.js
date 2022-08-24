@@ -1,22 +1,14 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
-import { MdPersonOutline } from "react-icons/md";
 import Head from "next/head";
 import Typed from "typed.js";
 import { AiOutlinePhone, AiFillFacebook, AiFillLinkedin } from "react-icons/ai";
 import { MdAlternateEmail } from "react-icons/md";
 export default function Home() {
-  const [currYPos, setCurrYPos] = useState(0);
   const [activeScreen, setActiveScreen] = useState("Home");
 
-  // Create reference to store the DOM element containing the animation
   const el = useRef(null);
-  // Create reference to store the Typed instance itself
   const typed = useRef(null);
-
-  useEffect(() => {
-    window.addEventListener("scroll", changeNavbar);
-  }, []);
 
   useEffect(() => {
     const options = {
@@ -39,18 +31,11 @@ export default function Home() {
     };
   }, []);
 
-  const changeNavbar = () => {
-    console.log(window.scrollY);
-    setCurrYPos(window.scrollY);
-  };
-
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
   const projectRef = useRef(null);
   const contactRef = useRef(null);
-
-  const [numOfBox, setNumOfBox] = useState(10);
 
   const skillsArr = [
     {
@@ -105,7 +90,7 @@ export default function Home() {
             niyoh.
           </h1>
         </div>
-        <div className="px-10 flex flex-row gap-x-5 font-oswald text-xl">
+        <div className="px-10 hidden md:flex flex-row gap-x-5 font-oswald text-xl">
           <motion.button
             className={` ${
               activeScreen == "Home" && "border-primary_bg border-b-2"
@@ -180,6 +165,7 @@ export default function Home() {
       </motion.header>
 
       <div className="h-screen w-full snap-y snap-mandatory scroll-smooth overflow-y-scroll">
+        {/* Home */}
         <div
           ref={homeRef}
           className="h-screen w-full bg-white snap-start flex justify-center items-center font-oswald"
@@ -191,19 +177,19 @@ export default function Home() {
           }}
         >
           <div className="flex flex-col justify-center items-center gap-y-5">
-            <h1 className="text-8xl ">
+            <h1 className="2xl:text-8xl xl:text-6xl lg:text-5xl md:text-5xl sm:text-4xl text-4xl ">
               Hi! I&apos;m <span className="font-semibold">Niyoh</span> a{" "}
             </h1>
-            <div className="type-wrap  text-8xl">
+            <div className="type-wrap 2xl:text-8xl xl:text-6xl lg:text-5xl md:text-5xl sm:text-4xl text-4xl">
               <span
                 style={{ whiteSpace: "pre" }}
                 className="tracking-wide font-semibold text-primary_bg"
                 ref={el}
               />
             </div>
-            <div className="flex flex-row gap-x-5">
+            <div className="flex flex-row gap-x-5 gap-y-5">
               <motion.button
-                className="px-2 py-2 border-b-2 border-primary_bg text-3xl my-5"
+                className="px-2 py-2 border-b-2 border-primary_bg md:text-3xl sm:text-2xl text-xl sm:my-5"
                 whileHover={{ scale: 1.1, color: "#1e3891" }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ duration: 0.1 }}
@@ -215,7 +201,7 @@ export default function Home() {
               </motion.button>
 
               <motion.button
-                className="px-2 py-2 border-b-2 border-primary_bg text-3xl my-5"
+                className="px-2 py-2 border-b-2 border-primary_bg md:text-3xl sm:text-2xl text-xl sm:my-5"
                 whileHover={{ scale: 1.1, color: "#1e3891" }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ duration: 0.1 }}
@@ -229,12 +215,13 @@ export default function Home() {
           </div>
         </div>
 
+        {/* About */}
         <div
           ref={aboutRef}
-          className="h-screen max-h-screen w-full bg-mint_pastel snap-start flex flex-row justify-center items-center px-20"
+          className="h-screen max-h-screen w-full bg-mint_pastel snap-start flex flex-col xl:flex-row justify-center items-center sm:px-10 md:px-10 2xl:px-20"
         >
           <motion.div
-            className="w-full h-full flex justify-center items-center"
+            className="w-full h-full hidden xl:flex justify-center items-center"
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             transition={{ duration: 1 }}
@@ -246,13 +233,15 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="px-10 flex flex-col justify-center items-center gap-y-5 w-full font-oswald"
+            className="px-10 flex flex-col justify-center items-center gap-y-5 w-full font-oswald "
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-5xl self-start">About Me</h1>
-            <p className="text-3xl leading-relaxed text-justify">
+            <h1 className="2xl:text-5xl md:text-4xl sm:text-4xl text-4xl self-start">
+              About Me
+            </h1>
+            <p className="2xl:text-3xl md:text-2xl sm:text-2xl text-xl leading-relaxed text-justify">
               Hi, my name is{" "}
               <span className="text-primary_bg font-semibold">
                 Niyoh Edwyn A. Villanueva
@@ -267,23 +256,31 @@ export default function Home() {
           </motion.div>
         </div>
 
+        {/* Skills */}
         <motion.div
           ref={skillsRef}
-          className="h-screen w-full bg-pink_pastel snap-start flex flex-col justify-center items-center py-20"
+          className="h-screen w-full bg-pink_pastel snap-start flex flex-col justify-center items-center py-5 md:py-10 2xl:py-20"
         >
-          <h1 className="text-6xl font-oswald my-10">My Skills</h1>
+          <h1 className="text-4xl md:text-6xl font-oswald 2xl:my-10">
+            My Skills
+          </h1>
 
-          <div className="grid grid-cols-5">
+          <div className="grid grid-cols-3 md:grid-cols-5 w-full md:px-10">
             {skillsArr.map((item, index) => (
               <motion.div
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 key={index}
-                className="bg-white rounded-md shadow-2xl aspect-square m-5 p-10 flex flex-col justify-center items-center gap-y-2"
+                className="bg-white rounded-md shadow-2xl aspect-square m-5 p-3 md:p-3 2xl:p-10 flex flex-col justify-center items-center gap-y-2"
               >
-                <img className="aspect-square h-20" src={item.img_url} />
-                <span className="text-lg font-oswald">{item.title}</span>
+                <img
+                  className="aspect-square h-10 md:h-16 xl:h-20 2xl:h-32"
+                  src={item.img_url}
+                />
+                <span className="text-xs md:text-lg font-oswald text-center">
+                  {item.title}
+                </span>
               </motion.div>
             ))}
           </div>
@@ -317,10 +314,6 @@ export default function Home() {
                     Simple Social Media Website
                   </p>
                   <p className="texl-lg md:text-4xl text-white hidden opacity-0 group-hover:opacity-100 group-hover:flex transition-all duration-300 px-20">
-                    {/* Create your own posts. Like or comment on posts from other
-                users. Still adding new features. */}
-                    {/* Made with NextJS + TailwindCSS and MongoDB + mongoose for
-                backend. Still under development. */}
                     Create an account and post what you want. (NextJS +
                     TailwindCSS)
                   </p>
@@ -411,6 +404,7 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Contact */}
         <div
           ref={contactRef}
           className="h-screen w-full bg-yellow_pastel snap-start flex flex-row-reverse justify-center items-center py-20 font-oswald gap-y-10"
@@ -418,7 +412,7 @@ export default function Home() {
           {/* https://i.ibb.co/RYds9QN/undraw-Contact-us-re-4qqt.png */}
 
           <motion.div
-            className="w-full h-full flex justify-center items-center"
+            className="w-full h-full hidden xl:flex justify-center items-center"
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             transition={{ duration: 1 }}
@@ -440,7 +434,12 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col items-start">
-              <div className="flex flex-row gap-x-5">
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="flex flex-row gap-x-5"
+              >
                 <MdAlternateEmail className="text-5xl" />
                 <motion.a
                   whileHover={{ scale: 1.1 }}
@@ -449,12 +448,23 @@ export default function Home() {
                 >
                   <h1 className="text-3xl underline">niyohedwyn21@gmail.com</h1>
                 </motion.a>
-              </div>
-              <div className="flex flex-row gap-x-5">
+              </motion.div>
+
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                className="flex flex-row gap-x-5"
+              >
                 <AiOutlinePhone className="text-5xl" />
                 <h1 className="text-3xl">+639959223380</h1>
-              </div>
-              <div className="flex flex-row gap-x-5">
+              </motion.div>
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.5, delay: 1 }}
+                className="flex flex-row gap-x-5"
+              >
                 <AiFillLinkedin className="text-5xl text-[#0A66C2]" />
                 <motion.a
                   whileHover={{ scale: 1.1 }}
@@ -463,8 +473,13 @@ export default function Home() {
                 >
                   <h1 className="text-3xl underline">LinkedIn Profile</h1>
                 </motion.a>
-              </div>
-              <div className="flex flex-row gap-x-5">
+              </motion.div>
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.5, delay: 1.2 }}
+                className="flex flex-row gap-x-5"
+              >
                 <AiFillFacebook className="text-5xl text-[#4267B2]" />
                 <motion.a
                   whileHover={{ scale: 1.1 }}
@@ -473,7 +488,7 @@ export default function Home() {
                 >
                   <h1 className="text-3xl underline">Facebook Profile</h1>
                 </motion.a>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
