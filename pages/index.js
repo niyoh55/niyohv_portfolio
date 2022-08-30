@@ -83,7 +83,7 @@ export default function Home() {
       </Head>
 
       <motion.header
-        className={`flex flex-row justify-center items-center fixed top-0 left-0 w-full text-black py-1 z-[100] bg-white`}
+        className={`flex flex-row justify-center items-center fixed top-0 left-0 w-full text-black py-1 z-[100] bg-white shadow-2xl`}
       >
         <div className="flex flex-row justify-center items-center px-10">
           <h1 className="font-oswald font-medium tracking-wider text-3xl">
@@ -304,7 +304,7 @@ export default function Home() {
             >
               <div
                 id="slide1"
-                className="aspect-video carousel-item relative min-w-[30%] w-full bg-contain bg-no-repeat h-auto bg-center bg-whitish_pastel group shadow-2xl"
+                className="aspect-square xl:aspect-video carousel-item relative min-w-[30%] w-full bg-contain bg-no-repeat h-auto bg-center bg-whitish_pastel group shadow-2xl"
                 style={{
                   backgroundImage: `url("https://i.ibb.co/k9H0GNS/socmed-next.png")`,
                 }}
@@ -324,11 +324,11 @@ export default function Home() {
                   </a>
                 </div>
 
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                  <a href="#slide3" className="btn btn-circle">
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-1 right-1 top-1/2">
+                  <a href="#slide3" className="btn btn-xs xl:btn-md btn-circle">
                     ❮
                   </a>
-                  <a href="#slide2" className="btn btn-circle">
+                  <a href="#slide2" className="btn btn-xs xl:btn-md btn-circle">
                     ❯
                   </a>
                 </div>
@@ -357,11 +357,11 @@ export default function Home() {
                     </button>
                   </a>
                 </div>
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                  <a href="#slide1" className="btn btn-circle">
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-1 right-1 top-1/2">
+                  <a href="#slide1" className="btn btn-xs xl:btn-md btn-circle">
                     ❮
                   </a>
-                  <a href="#slide3" className="btn btn-circle">
+                  <a href="#slide3" className="btn btn-xs xl:btn-md btn-circle">
                     ❯
                   </a>
                 </div>
@@ -391,11 +391,11 @@ export default function Home() {
                     </button>
                   </a>
                 </div>
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                  <a href="#slide2" className="btn btn-circle">
+                <div className="absolute flex justify-between transform -translate-y-1/2 left-1 right-1 top-1/2">
+                  <a href="#slide2" className="btn btn-xs xl:btn-md btn-circle">
                     ❮
                   </a>
-                  <a href="#slide1" className="btn btn-circle">
+                  <a href="#slide1" className="btn btn-xs xl:btn-md btn-circle">
                     ❯
                   </a>
                 </div>
